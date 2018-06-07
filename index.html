@@ -15,11 +15,14 @@
 	
 		<button onclick="postws()">POST MICROSERVICE</button> 
 		<button onclick="getws()">GET MICROSERVICE</button> 
+		<button onclick="getTest()">TEST MICROSERVICE</button>
 		
 	</body>
 	
 	<script>
-		
+		function getTest(){
+			alert("test")
+		}
 		function postws() {
 			var nameaa = "rahul";
 			$.ajax({
