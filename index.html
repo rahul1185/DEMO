@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+		<meta name="generator" content="Adobe GoLive 6">
+		<title>MICROSERVICE</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+	<body bgcolor="#ffffff">
+	
+		<button onclick="postws()">POST MICROSERVICE</button> 
+		<button onclick="getws()">GET MICROSERVICE</button> 
+		
+	</body>
+	
+	<script>
+		
+		function postws() {
+			var nameaa = "rahul";
+			$.ajax({
+				method: "POST",
+				url: "http://192.168.1.101:8081/names",
+				data:  JSON.stringify(nameaa)
+			}).done(function () {
+				load();
+			});
+		}
+    	
+		function getws() {
+			$.ajax({
+			  dataType: "json",
+			  url: "http://amsyspatientprofile-myproject.192.168.99.100.nip.io/api/articles",
+			  method: "GET",
+			  crossDomain : true,
+			  success : function(WS_return1) {
+				console.log(WS_return1)
+			},
+			});
+
+			/*$.getJSON("http://amsyspatientprofile-myproject.192.168.99.100.nip.io/api/articles", function (data) {
+			console.log(data)	
+			});*/
+        }
+		
+	</script>
+
+</html>
